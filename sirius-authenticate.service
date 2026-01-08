@@ -6,7 +6,8 @@ After=network.target
 Type=simple
 User=siriusaudio_daemon
 ExecStart=/var/lib/sirius-installer/run_update.sh
-Restart=never
+Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
