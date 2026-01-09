@@ -30,6 +30,7 @@ source ./authentication-key.txt
 cp ./run_update.sh /var/lib/sirius-installer/
 cp ./client.py /var/lib/sirius-installer/
 cp ./authentication-key.txt /var/lib/sirius-installer/
+cp ./squeezelite.env /var/lib/sirius-installer
 chmod +x /var/lib/sirius-installer/run_update.sh
 
 # Copy systemd service file
