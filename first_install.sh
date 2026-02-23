@@ -34,13 +34,14 @@ cp ./squeezelite.env /var/lib/sirius-installer
 chmod +x /var/lib/sirius-installer/run_update.sh
 
 # Copy systemd service file
-sudo cp ./sirius-authenticate.service /lib/systemd/system/sirius-authenticate.service
+sudo cp ./sirius-authenticate.service /lib/systemd/system/
+sudo cp ./sirius-authenticate.timer /lib/systemd/system/
+
+sudo systemctl enable sirius-authenticate.timer
+sudo systemctl start sirius-authenticate.timer
 
 # Enable systemd service to run at boot
 sudo systemctl enable sirius-authenticate.service
-
-# Add cron job to run update script daily at 3am
-(crontab -l 2>/dev/null; echo "0 3 * * * /var/lib/sirius-installer/run_update.sh") | crontab -
 
 sudo systemctl restart sirius-authenticate.service
 

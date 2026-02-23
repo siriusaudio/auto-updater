@@ -7,7 +7,7 @@ Type=simple
 User=siriusaudio_daemon
 ExecStart=/var/lib/sirius-installer/run_update.sh
 Restart=on-failure
-RestartSec=5
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
