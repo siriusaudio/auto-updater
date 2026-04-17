@@ -17,9 +17,9 @@ sudo echo "siriusaudio_daemon ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee "/etc/sudo
 sudo mkdir -p /var/lib/sirius-installer
 sudo mkdir -p /var/lib/sirius-installer/.keys
 
-sudo chown -R siriusaudio_daemon /var/lib/sirius-installer
+sudo python3 -m venv /var/lib/sirius-installer/.venv
 
-python3 -m venv /var/lib/sirius-installer/.venv
+sudo chown -R siriusaudio_daemon /var/lib/sirius-installer
 
 source /var/lib/sirius-installer/.venv/bin/activate
 pip install -r requirements.txt
